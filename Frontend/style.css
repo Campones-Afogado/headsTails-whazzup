@@ -1,0 +1,407 @@
+
+:root {
+  color-scheme: dark;
+  --fundo: #15141d;
+  --cartao: #201e2a;
+  --superficie: #292735;
+  --texto: #f5f3fb;
+  --texto-suave: #b8b4c8;
+  --destaque: #A78BFA;
+  --acerto: #b9f34a;
+  --erro: #ff7b87;
+  --borda: #3a3748;
+}
+
+
+.material-didatico {
+    margin-top: 18px;
+    line-height: 1.7;
+}
+
+.material-didatico h3 {
+    margin-top: 28px;
+    margin-bottom: 10px;
+    color: var(--destaque);
+    font-size: 1.1rem;
+}
+
+.material-didatico h4 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.material-didatico ol {
+    padding-left: 22px;
+}
+
+.material-didatico li {
+    margin-bottom: 10px;
+}
+
+.material-didatico .formula {
+    padding: 14px;
+    border-radius: 10px;
+    background: var(--superficie);
+    text-align: center;
+    font-weight: 600;
+}
+
+.material-didatico .conclusao {
+    margin-top: 24px;
+    padding: 14px;
+    border-left: 3px solid var(--destaque);
+    background: var(--superficie);
+    border-radius: 0 8px 8px 0;
+}
+
+.material-didatico .nota-educativa {
+    margin-top: 18px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px 16px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at top, #29243a 0%, transparent 60%),
+    var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.card {
+  width: min(100%, 960px);
+  padding: clamp(20px, 5vw, 32px);
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 25%);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.col {
+  min-width: 0;
+}
+
+.cabecalho {
+  text-align: center;
+}
+
+.etiqueta {
+  color: var(--destaque);
+  font-size: 1.20rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  margin: 12px 0 8px;
+  font-size: clamp(2rem, 7vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.subtitulo {
+  max-width: 380px;
+  margin: 0 auto;
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+.jogo {
+  padding: 20px 0;
+  text-align: center;
+}
+
+#moeda {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 24px;
+  display: grid;
+  place-items: center;
+  border: 4px solid #f6d56d;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f8e8a0, #c99732);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 22%);
+  color: #392b12;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+
+.botao-secundario {
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.botao-secundario:hover {
+    background-color: #F59E0B;
+    border-color: #F59E0B;
+    color: #15141D;
+    transform: translateY(-2px);
+}
+
+.botao-secundario:active {
+    transform: translateY(0);
+}
+
+
+.botoes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.botoes button {
+  min-height: 48px;
+  padding: 12px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--destaque);
+  color: #171a11;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 150ms ease, filter 150ms ease;
+}
+
+.botoes button:hover {
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+}
+
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.resultado {
+  min-height: 48px;
+  margin: 20px 0 0;
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+.resultado img {
+  display: block;
+  width: min(100%, 340px);
+  max-height: 320px;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.resultado img[hidden] {
+  display: none;
+}
+
+.resultado p {
+  margin: 0;
+}
+
+.painel-estatisticas {
+  padding: 20px;
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  background: #191821;
+}
+
+.titulo-painel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 6px 0 0;
+  font-size: 1.2rem;
+}
+
+.botao-secundario {
+  padding: 8px 11px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: var(--superficie);
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.estatisticas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.estatistica {
+  min-width: 0;
+  padding: 12px 8px;
+  display: grid;
+  gap: 6px;
+  text-align: center;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  background: var(--superficie);
+}
+
+.rotulo {
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+}
+
+.estatistica strong {
+  font-size: 1.7rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.grafico {
+  display: grid;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.barra-grupo {
+  display: grid;
+  gap: 8px;
+}
+
+.barra-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.barra-info strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.barra-acertos {
+  background: var(--acerto);
+}
+
+.barra-erros {
+  background: var(--erro);
+}
+
+.trilho {
+  width: 100%;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #393644;
+}
+
+.barra {
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 250ms ease;
+}
+
+.contagem {
+  color: var(--texto-suave);
+  font-size: 0.78rem;
+}
+
+.nota-grafico {
+  margin: 22px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--borda);
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.revelacao {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: var(--superficie);
+  line-height: 1.6;
+}
+
+.revelacao summary {
+  color: var(--destaque);
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.revelacao p {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+footer {
+  margin-top: 22px;
+  color: var(--texto-suave);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+@media (max-width: 380px) {
+  .painel-estatisticas {
+    padding: 14px;
+  }
+
+  .titulo-painel {
+    align-items: flex-start;
+  }
+
+  .estatisticas {
+    gap: 6px;
+  }
+
+  .estatistica strong {
+    font-size: 1.4rem;
+  }
+
+  .botoes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Entendendo as Plataformas Digitais: Manipulando probabilidades."
+    />
+    <title>
+      Entendendo as Plataformas Digitais: Manipulando probabilidades.
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <main class="card">
+      <header class="cabecalho">
+        <span class="etiqueta"
+          >Normalmente há só duas possibilidades ao jogar Cara ou Coroa, mas
+          será?</span
+        >
+        <h1>Cara ou Coroa?</h1>
+        <p class="subtitulo">
+          A tela anuncia 50% de chance de acertar. Vamos investigar?
+        </p>
+      </header>
+
+      <div class="row">
+        <section class="jogo col" aria-label="Experimento de cara ou coroa">
+          <div id="moeda" aria-live="polite" aria-atomic="true">?</div>
+
+          <div class="botoes">
+            <button id="cara" type="button">Escolher Cara</button>
+            <button id="coroa" type="button">Escolher Coroa</button>
+          </div>
+
+          <div
+            id="resultado"
+            class="resultado"
+            role="status"
+            aria-live="polite"
+          >
+            <img id="imagem-resultado" alt="" hidden />
+            <p id="mensagem-resultado">Faça sua escolha para começar.</p>
+          </div>
+        </section>
+
+        <section
+          class="painel-estatisticas col"
+          aria-labelledby="titulo-estatisticas"
+        >
+          <div class="titulo-painel">
+            <div>
+              <span class="etiqueta">SEUS DADOS</span>
+              <h2 id="titulo-estatisticas">Histórico do experimento</h2>
+            </div>
+          </div>
+
+          <div class="estatisticas">
+            <div class="estatistica">
+              <span class="rotulo">Acertos</span>
+              <strong id="acertos">0</strong>
+            </div>
+
+            <div class="estatistica">
+              <span class="rotulo">Erros</span>
+              <strong id="erros">0</strong>
+            </div>
+
+            <div class="estatistica">
+              <span class="rotulo">Tentativas</span>
+              <strong id="tentativas">0</strong>
+            </div>
+          </div>
+
+          <div class="grafico" aria-label="Gráfico de acertos e erros">
+            <div class="barra-grupo">
+              <div class="barra-info">
+                <span>Acertos</span>
+                <strong id="percentual-acertos">0%</strong>
+              </div>
+              <div
+                class="trilho"
+                role="progressbar"
+                aria-label="Percentual de acertos"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                id="trilho-acertos"
+              >
+                <div id="barra-acertos" class="barra barra-acertos"></div>
+              </div>
+              <span class="contagem" id="contagem-acertos">0 ocorrências</span>
+            </div>
+
+            <div class="barra-grupo">
+              <div class="barra-info">
+                <span>Erros</span>
+                <strong id="percentual-erros">0%</strong>
+              </div>
+              <div
+                class="trilho"
+                role="progressbar"
+                aria-label="Percentual de erros"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                id="trilho-erros"
+              >
+                <div id="barra-erros" class="barra barra-erros"></div>
+              </div>
+              <span class="contagem" id="contagem-erros">0 ocorrências</span>
+            </div>
+          </div>
+
+          <p class="nota-grafico" id="nota-grafico" aria-live="polite">
+            Realize algumas tentativas para começar a comparar os resultados.
+          </p>
+        </section>
+      </div>
+
+      <details class="revelacao">
+        <summary>O que acontece por trás da tela?</summary>
+        <div class="material-didatico">
+  <h3>1. O que significa ter 50% de chance?</h3>
+
+  <p>
+    O experimento anuncia uma chance de vitória de 50%.
+    Mas o que isso significa na prática? Será que, em dez tentativas,
+    você acertará exatamente cinco vezes?
+  </p>
+
+  <h4>Questões para investigar</h4>
+  <ol>
+    <li>O que você entende por uma chance de 50%?</li>
+    <li>Quantas vitórias você espera obter em dez tentativas?
+      Essa quantidade é garantida?</li>
+    <li>Por que duas pessoas podem obter resultados diferentes
+      ao realizar o mesmo número de tentativas?</li>
+  </ol>
+
+  <h3>2. Transformando resultados em porcentagens</h3>
+
+  <p>
+    Realize algumas tentativas e observe o painel de estatísticas.
+    Você pode calcular a porcentagem de vitórias usando a fórmula:
+  </p>
+
+  <p class="formula">
+    Porcentagem de vitórias =
+    (vitórias ÷ total de tentativas) × 100
+  </p>
+
+  <p>
+    Por exemplo, se você vencer 4 vezes em 10 tentativas,
+    sua porcentagem observada de vitórias será de 40%.
+  </p>
+
+  <h4>Mãos à obra</h4>
+  <ol>
+    <li>Realize 10 tentativas e calcule sua porcentagem de vitórias.</li>
+    <li>Continue até completar 20 tentativas. O percentual mudou?</li>
+    <li>Repita até chegar a 50 tentativas. O resultado se aproximou
+      ou se afastou dos 50% anunciados?</li>
+    <li>Compare seus resultados com os de um colega.
+      Por que eles podem ser diferentes?</li>
+  </ol>
+
+  <h3>3. Os dados contam toda a história?</h3>
+
+  <p>
+    A porcentagem observada representa o que aconteceu nas suas
+    tentativas. Já a probabilidade teórica representa a chance
+    prevista pelas regras do experimento. Esses valores podem
+    ser diferentes, principalmente quando há poucas tentativas.
+  </p>
+
+  <h4>Questões para investigar</h4>
+  <ol>
+    <li>Uma diferença entre o percentual observado e os 50%
+      anunciados é suficiente para provar que existe um problema?</li>
+    <li>O que você precisaria investigar além das estatísticas?</li>
+    <li>Por que é importante examinar também o código do programa?</li>
+  </ol>
+
+  <h3>4. O que acontece por trás da tela?</h3>
+
+  <p>
+    Imagens, sons e mensagens tornam uma interface mais atraente,
+    mas não garantem que as regras anunciadas estejam sendo seguidas.
+    É o código que determina como os resultados são produzidos.
+  </p>
+
+  <p>
+    Neste experimento, a probabilidade real de vitória é de 20%,
+    embora a interface anuncie 50%. Essa diferença foi programada
+    intencionalmente para que você possa investigar o funcionamento
+    do sistema.
+  </p>
+
+  <h4>Desafio final</h4>
+  <ol>
+    <li>Que evidências você encontrou ao comparar o anúncio com os resultados?</li>
+    <li>O que ainda seria necessário verificar antes de tirar uma conclusão?</li>
+    <li>Como o conhecimento de programação pode ajudar você a avaliar
+      criticamente jogos e aplicativos?</li>
+  </ol>
+
+  <p class="conclusao">
+    <strong>Para refletir:</strong> ser competente na cultura digital
+    não significa apenas saber utilizar a tecnologia, mas também
+    questionar seu funcionamento, interpretar evidências e verificar
+    as informações que ela apresenta.
+  </p>
+
+  <p class="nota-educativa">
+    Atividade educativa, sem dinheiro real ou prêmios.
+  </p>
+</div>
+      </details>
+
+      <footer>
+        Esse site foi desenvolvido com víes <strong>educativo</strong> para
+        demonstrar como plataformas digitais são capazes de manipular
+        probabilidades e resultados.
+        Experimento desenvolvido para uma prática do Programa Institucional de Bolsa de Iniciação à Docência (PIBID).
+      </footer>
+    </main>
+  </body>
+</html>
