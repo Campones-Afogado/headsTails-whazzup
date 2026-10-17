@@ -51,13 +51,13 @@ function jogar(escolha) {
     moeda.textContent = ladoResultado;
 
     if (venceu) {
-        imagemResultado.src = "../archives/muse-image_b_Gere_um_card_de_vit%C3%B3.png";
+        imagemResultado.src = "./archives/muse-image_b_Gere_um_card_de_vit%C3%B3.png";
         imagemResultado.alt = "Pessoa comemorando o acerto";
 
         mensagemResultado.textContent =
             `Resultado: ${ladoResultado}. Você acertou!`;
     } else {
-        imagemResultado.src = "../archives/gpt-image-2.5-sunburst_b_Gere_um_card_de_derr.png";
+        imagemResultado.src = "./archives/gpt-image-2.5-sunburst_b_Gere_um_card_de_derr.png";
         imagemResultado.alt = "Pessoa refletindo sobre o resultado";
 
         mensagemResultado.textContent =
